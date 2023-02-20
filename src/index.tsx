@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { WagmiConfig } from 'wagmi'
 import { ChakraProvider } from '@chakra-ui/react';
+import { client } from './connectors/WagmiConnector';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ChakraProvider>
+    <WagmiConfig client={client}>
       <App />
+    </WagmiConfig>
     </ChakraProvider>
   </React.StrictMode>
 );
