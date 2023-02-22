@@ -10,6 +10,7 @@ import {
   AvatarBadge,
   Avatar
 } from "@chakra-ui/react"
+import { ConnectKitButton } from "connectkit"
 
 export default function Navbar() {
   const toast = useToast()
@@ -26,6 +27,7 @@ export default function Navbar() {
           </AvatarBadge>
         </Avatar>
         <Text>mario@netninja.dev</Text>
+        <ConnectKitButton label="Connect Wallet" />
         <Button 
           colorScheme="purple"
           onClick={() => toast({
