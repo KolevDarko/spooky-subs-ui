@@ -10,11 +10,11 @@ import {
 } from '@chakra-ui/react'
 import { Form, redirect } from 'react-router-dom'
 
-export default function Create() {
+export default function Client() {
 
   return (
     <Box maxW="480px">
-      <Form method="post" action="/create">
+      <Form method="post" action="/client"> 
         <FormControl isRequired mb="40px">
           <FormLabel>Task name:</FormLabel>
           <Input type="text" name="title" />

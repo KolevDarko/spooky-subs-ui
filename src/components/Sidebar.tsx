@@ -9,19 +9,19 @@ export default function Sidebar() {
       <ListItem>
         <NavLink to="/">
           <ListIcon as={CalendarIcon} color="white" />
-          Dashboard
+          Subscribe
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="create">
+        <NavLink to="client">
           <ListIcon as={EditIcon} color="white" />
-          New Task
+          Client
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="profile">
+        <NavLink to="vendor">
           <ListIcon as={AtSignIcon} color="white" />
-          Profile
+          Vendor
         </NavLink>
       </ListItem>
     </List>

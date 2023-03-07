@@ -1,60 +1,36 @@
-import { EditIcon, ViewIcon } from "@chakra-ui/icons"
-import { 
-  Box, 
-  SimpleGrid,
-  Text,
-  Flex,
-  Heading,
-  Card, 
-  CardHeader,
-  CardBody,
-  CardFooter,
-  HStack,
-  Divider,
-  Button,
-  Avatar
-} from "@chakra-ui/react"
-import { useLoaderData } from "react-router-dom"
+import { Box, Button, Card, FormLabel, Heading } from '@chakra-ui/react';
 
 export default function Dashboard() {
-  const tasks = useLoaderData() as Array<any>;
-
+  const onButtonClick = () => {
+    console.log("btn clicked");
+  }
   return (
-    <SimpleGrid spacing={10} minChildWidth={300}>
-      {tasks && tasks.map((task: any) => (
-        <Card key={task.id} borderTop="8px" borderColor="purple.400" bg="white">
-
-          <CardHeader color="gray.700">
-            <Flex gap={5}>
-              <Box w="50px" h="50px">
-              <Avatar name={task.author} src={task.img} />
-              </Box>
-              <Box>
-                <Heading as="h3" size="sm">{task.title}</Heading>
-                <Text>by {task.author}</Text>
-              </Box>
-            </Flex>
-          </CardHeader>
-
-          <CardBody color="gray.500">
-            <Text>{task.description}</Text>
-          </CardBody>
-
-          <Divider borderColor="gray.200" />
-
-          <CardFooter>
-            <HStack>
-              <Button variant="ghost" leftIcon={<ViewIcon />}>Watch</Button>
-              <Button variant="ghost" leftIcon={<EditIcon />}>Comment</Button>
-            </HStack>
-          </CardFooter>
-
+        <Card margin={"auto"} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <Box p="6">
+            <Box mb="3" alignItems="baseline">
+              <Heading size="md" fontWeight="semibold" color="gray.700">
+                Subscribe to Vendor: chainlink.eth
+              </Heading>
+            </Box>
+            <Box>
+              Vendor: 0x123346zdvsdsvetaxeuvlskcniw
+            </Box>
+            <Box>
+              Subscription fee: 0.01 ETH
+            </Box>
+            <Box>
+              Recurrence period: 30 days
+            </Box>
+            <Box mt="5" textAlign="center">
+              <Button onClick={onButtonClick} colorScheme="blue" size="md">
+                Subscriiiibe
+              </Button>
+            </Box>
+          </Box>
         </Card>
-      ))}
-    </SimpleGrid>
-  )
-}
-
+      );
+    }
+    
 export const tasksLoader = async () => {
   const res = await fetch('http://localhost:3000/tasks')
 

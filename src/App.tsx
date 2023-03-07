@@ -10,12 +10,12 @@ import {
 
 import RootLayout from './layouts/RootLayout';
 import Dashboard from './pages/Dashboard';
-import Create from './pages/Create';
-import Profile from './pages/Profile';
+import Client from './pages/Client';
+import Vendor from './pages/Vendor';
 
 
 import { WagmiConfig, createClient } from "wagmi";
-import { ConnectKitProvider, ConnectKitButton, getDefaultClient } from "connectkit";
+import { ConnectKitProvider, getDefaultClient } from "connectkit";
 
 const alchemyId = process.env.ALCHEMY_ID;
 
@@ -30,8 +30,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Dashboard/>} />
-      <Route path="create" element={<Create/>} />
-      <Route path="profile" element={<Profile/>} />
+      <Route path="client" element={<Client/>} />
+      <Route path="vendor" element={<Vendor/>} />
     </Route>
   )
 )
