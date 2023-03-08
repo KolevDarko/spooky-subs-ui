@@ -1,11 +1,7 @@
 import { 
   Flex, 
-  Heading, 
-  Text, 
   Spacer, 
   HStack, 
-  AvatarBadge,
-  Avatar
 } from "@chakra-ui/react"
 import { ConnectKitButton } from "connectkit"
 import { useAccount } from "wagmi";
